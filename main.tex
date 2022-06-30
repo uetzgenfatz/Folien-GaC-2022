@@ -2,8 +2,9 @@
 handout
 ]{beamer}
 
-\usetheme{Luebeck}
-\usepackage{beamerthemesplit}
+\usepackage{appendixnumberbeamer}
+\usetheme{Pittsburgh}
+%\usepackage{beamerthemesplit}
 \usecolortheme{beaver}
 \setbeamercolor{navigation symbols}{fg=black, fg=gray}
 \setbeamercolor{structure}{fg=gray}
@@ -17,7 +18,7 @@ handout
 \usepackage{booktabs}
 \usepackage{subfigure}	% mehrere Bilder in einer figure-Umgebung
 \usepackage{marvosym} %Radioaktiv-Zeichen
-\usepackage[english, ngerman]{babel}
+\usepackage[ngerman, english]{babel}
 %\usepackage{beamerthemesplit}
 
 %\usepackage{lmodern,textcomp}
@@ -54,6 +55,18 @@ handout
 \usepackage{gb4e}
 \usepackage{xcolor}
 
+\mode<handout>{
+\setbeamertemplate{footline}[frame number]
+}
+
+\lingset{
+    aboveglftskip=0pt,
+    belowglpreambleskip=0pt,
+    belowpreambleskip=0pt,
+    extraglskip=0pt,
+    Everyex={\parskip=0pt},
+}
+
 %neue Kommandos Oliver%
 \newcommand{\qu}[1]{„#1“}
 \newcommand{\qufs}[1]{,#1‘}
@@ -67,7 +80,7 @@ handout
 \let\eachwordtwo=\sf  %
 \newcommand{\oldoe}{$\stackrel{\textsf{\tiny e}}{\textsf{o}}$}
 
-\setbeamercolor{alerted text}{fg=orange}
+%\setbeamercolor{alerted text}{fg=red}
 
 \newcommand*{\ballref}[1]{%
     \begin{pgfpicture}{-1ex}{-0.65ex}{1ex}{1ex}
@@ -81,6 +94,10 @@ handout
 \DeclareTextSymbolDefault{\dh}{T1}
 \DeclareTextSymbolDefault{\th}{T1}
 
+% Makro für arbiträre übergeschriebene Buchstaben
+\newcommand{\supr}[2]{$\stackrel{\text{\smaller#2}}{\text{#1}}$}
+
+\selectlanguage{ngerman}
 
 \title[Loss of the MHG bipartite negation marker \textit{ne ... niht}]{\bf{The loss of the MHG bipartite negation marker \textit{ne ... niht}}}
 \subtitle{Diachronic and diatopic variation in ReM and CAO}
@@ -96,8 +113,8 @@ Daniel Hrbek\inst{1} \and Oliver Schallert\inst{2}}
 \href{mailto:oliver.schallert@lmu.de}{\texttt{oliver.schallert@lmu.de}}
 }
 
-\date{02.\,07.\,2022
-}
+\date{2 July 2022}
+
 \pgfdeclareimage[width=2.5cm]{logo}{LMU-Logo.png}
 % Logo Uni Osnabrück ergänzen
  \pgfdeclareimage[width=3.75cm]{pogo}{UOS-R.jpg} 
@@ -108,6 +125,7 @@ Daniel Hrbek\inst{1} \and Oliver Schallert\inst{2}}
 \begin{document}
 
 \begin{frame}
+\thispagestyle{empty}
 \titlepage
 \end{frame}
 
@@ -126,18 +144,11 @@ Daniel Hrbek\inst{1} \and Oliver Schallert\inst{2}}
 
 \end{frame}
 
-\begin{frame}{Acknowledgement}
-
-For numerous tips and helpful conversations as well as the preview of her PhD thesis:
+\begin{frame}{Acknowledgements}
 
 \begin{itemize}
-\item \alert{Julia Hertel} (née Schüler) (Saarland University) for a preview of her PhD thesis
-\end{itemize}
-\bigskip
-
-Collaboration Document Project:
-\begin{itemize}
-\item \alert{Carsten Becker,} University of Marburg
+\item \alert{Julia Hertel} (née Schüler) (Saarland University) for sharing work from her PhD thesis with us.
+\item \alert{Carsten Becker} (University of Marburg) for the fruitful work on MHG charters we have done together.
 \end{itemize}
 
 \end{frame}
@@ -147,148 +158,139 @@ Collaboration Document Project:
 
 \begin{frame}{Point of departure}
 
-\pex[interpartskip=1ex] \label{a}
+\pex[] \label{a}
 \a
 \begingl
 \gla die \textbf{ne}mugin iz uernemen//
 \glb they NEG=could it hear//
-\glft Wiener Physiologus (149va,5)//
+\glft (Wiener Physiologus 149va,5)//
 \endgl
 \a
 \begingl
 \gla er\textbf{ne} wil dich \textbf{nit} lazen//
 \glb he=NEG wants you NEG let//
-\glft Rolandslied (0a,8969)//
+\glft (Rolandslied 0a,8969)//
 \endgl
 \a
 \begingl
 \gla Sí	ſprachen \textbf{niht} an dem hilígen tag//
 \glb they talked NEG on the sacred day//
-\glft  Oberaltaicher Evangelistar (25ba,37)//
+\glft  (Oberaltaicher Evangelistar 25ba,37)//
 \endgl
 \xe
 
 \end{frame}
 
 \begin{frame}{Point of departure}
-\framesubtitle{Negation structures in the course of German}
 
-In all Old Germanic languages, we find a preverbal negation particle \textit{ni}/\textit{ne} that derives from PTG \textit{*ni} (cf. \citealt{Eythorsson1995}, \citealt{Eythorsson2002}):
+
+\begin{itemize}
+\item In all Old Germanic languages, we find a preverbal negation particle \textit{ni}/\textit{ne} that derives from PTG \textit{*ni} (cf. \citealt{Eythorsson1995}, \citealt{Eythorsson2002}):
+\end{itemize}
 
 \pex
 \a
 \begingl
-\gla ni was wul\th ag//
+\gla ni was wul\th ag \textup{(Gothic)}//
 \glb \textsc{NEG} was glorious//
-\glft Gothic; 2nd Letter Corinthians 3:10//
+\glft (2nd Letter Corinthians 3,10)//
 \endgl
 \a
 \begingl
-\gla ni láz thir nan ingángan//
+\gla ni láz thir nan ingángan \textup{(OHG)}//
 \glb \textsc{NEG} let you him escape//
-\glft OHG; Otfrid IV 37,11//
+\glft (Otfrid IV 37,11)//
 \endgl
 \a
 \begingl
-\gla út \th ú ne komir / órum h\textipa{\k{o}}llum frá//
+\gla út \th ú ne komir / órum hǫllum frá //
 \glb out you \textsc{NEG} come {} our.\textsc{DAT.PL} hall.\textsc{DAT.PL} from//
-\glft Old Norse; Vaf\th rú\dh nismál 7//
+\glft \textup{(Old Norse) (Vaf\th rú\dh nismál 7)} //
 \endgl
 \xe
 
 \end{frame}
 
 \begin{frame}{Point of departure}
-\framesubtitle{Negation structures in the course of German}
 
-\citet[690]{Grimm1890} already noted that the early Germanic dialects are strikingly similar in matters of negation:
-\bigskip
-\par
-\begingroup
-\leftskip=0.5cm % Parameter anpassen
-\noindent %ab hier der Text, der eingerückt werden soll
-\begingroup
-\rightskip=0.5cm % Parameter anpassen
-\noindent %ab hier der Text, der eingerückt werden soll
+\begin{itemize}
+\item \citet[690]{Grimm1890} already noted that the early Germanic dialects are strikingly similar in terms of their negation patterns:
+\end{itemize}
 
-\begin{small}
+\begin{quote}
+\raggedright
 NI war die ursprüngliche und wahre negation; in der goth sprache hat sie noch den weitesten spielraum, in den übrigen nimmt sie allmählich ab, wiewohl auf verschiedne weise; heutzutag ist sie vor dem verbo überall verschwunden und den partikeln gewichen, die anfangs bloss zu ihrer verstärkung hinter das verbum gestellt wurden und zum theil mit ihr selbst zusammengesetzt sind. 
-\end{small}
-
-\par
-\endgroup
-\par
-\endgroup 
+\end{quote}
 
 \end{frame}
 
-\section{Diachrony of \textit{Jespersen's Cycle} in German}
-\subsection{\textit{Jespersen's Cycle} in general}
 
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
+
+\section{Negation: diachronic aspects}
+\subsection{\textit{Jespersen's Cycle}}
+
+
+\begin{frame}{Negation: diachronic aspects}
+\framesubtitle{\textit{Jespersen's Cycle}}
+\textit{Jespersen's Cycle} consists of three stages which can be observed:
+
+\begin{itemize}
+    \item \alert{Stage I:} the single preverbal element OHG \textit{ni} gets (phonologically) weakened $\rightarrow$ MHG \textit{ne/en}
+    \item \alert{Stage II:} now weakened \textit{ne} is insufficient to express negation on its own and is therefore strengthened by an additional element MHG \textit{niht} ($<$ OHG \textit{niouuiht} ‘nothing’) $\rightarrow$ \alert{bipartite negation marker} \textit{ne ... niht}
+    \item \alert{Stage III:} the original element falls victim to complete loss $\rightarrow$ MHG \textit{niht} expresses (sentential) negation on its own
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Negation: diachronic aspects}
 \framesubtitle{\textit{Jespersen's Cycle}}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=8.5cm]{Jespersen.png}
-\caption{\textit{Jespersen's Cycle} (\citet[15]{jaeger08})}
+\includegraphics[width=8cm]{Jespersen.png}
+\caption{\textit{Jespersen's Cycle} (\citealt[15]{jaeger08})}
 \end{figure}
-\begin{itemize}
-    \item The \textit{Jespersen's Cycle} (\citealt{jespersen17}) can be observed in all of the Germanic languages: ptg. *\textit{ni} (< ie. *\textit{ne}) $>$ me. \textit{ne ... nought}, on. \textit{ne ... -at/eigi} $>$ engl. \textit{not}, isl. \textit{ekki}
-\end{itemize}
+
 
 \end{frame}
 
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
-\framesubtitle{\textit{Jespersen's Cycle}}
-\textit{Jespersen's Cycle} consists of \textbf{three stages} which can be observed in \textbf{every West Germanic language}:
-
-\begin{itemize}
-    \item \textbf{Stage I:} the single preverbal element OHG \textit{ni} gets (phonologically) weakened $\rightarrow$ MHG \textit{ne/en}
-    \item \textbf{Stage II:} now weakened \textit{ne} is found insufficient to express negation on its own and is therefore strengthened by an additional element MHG \textit{niht} ($<$ OHG \textit{niouuiht} ‚nothing‘) $\rightarrow$ \textbf{bipartite negation marker} \textit{ne ... niht}
-    \item \textbf{Stage III:} the original element falls victim to complete loss $\rightarrow$ MHG \textit{niht} expresses (sentential) negation on its own
-\end{itemize}
-
-\end{frame}
-
-\subsection{Previous studies}
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
+\begin{frame}{Negation: diachronic aspects}
 \framesubtitle{Previous studies}
 
 \begin{itemize}
-    \item For a long time, \textit{Jespersen's Cycle} was accepted for entire West Germanic.
-    \item This was recently proven for e.g. Low German by \citet{Breitbarth2014}.
-    \item Therefore, MHG was assumed to be a Stage II language: \textit{ne ... niht} as the main strategy of negation.
-    \item However, recent studies for MHG (\citealt{jaeger08,Pickl2017}) reveal that MHG scenario is significantly more complex.
+    \item For a long time, \textit{Jespersen's Cycle} was regarded to hold for West Germanic in its entirety.
+    \item In particular, it also applies to Low German (\citealt{Breitbarth2014}).
+    \item Therefore, MHG was assumed to represent stage II: \textit{ne ... niht} as the main strategy of negation.
+    \item However, recent studies for MHG (\citealt{jaeger08,Pickl2017}) reveal that the situation in MHG is significantly more complex.
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
+\begin{frame}{Negation: diachronic aspects}
 \framesubtitle{Previous studies}
 
 \begin{itemize}
-    \item Jägers (\citeyear{jaeger08}) data suggest that MHG finished \textit{Jespersen's Cycle} at the end of the 13th century – at the latest!
-    \item Pickls (\citeyear{Pickl2017}) prayers study support Jägers findings for Upper German $\rightarrow$ \textit{niht} as the main negation strategy already by 1200!
-    \item However, \citet{witzenhausen19} (\textit{ne} only) and \citet{schueler16}/\citet{HertelimErscheinen}, who analyzed MHG charters (incl. Western Central German dialects) both state a high amount of areal variation!
+    \item Jägers (\citeyear{jaeger08}) data suggest that MHG finished \textit{Jespersen's Cycle} at the end of the 13th century – at the latest.
+    \item Pickl’s (\citeyear{Pickl2017}) study on sermons support Jäger’s findings for Upper German $\rightarrow$ \textit{niht} as the main negation strategy already by 1200.
+    \item However, \citet{witzenhausen19} (\textit{ne} only) and \citet{schueler16}/\citet{HertelimErscheinen}, who analyzed MHG charters (incl. Western Central German dialects) both oberve a high amount of areal variation.
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
+\begin{frame}{Negation: diachronic aspects}
 \framesubtitle{Previous studies}
 
 \begin{center}
-\begin{tabular}{c c c c}
-\hline\hline
- & \textbf{Bipartite negation} & \textbf{single \textit{niht}} & \textbf{total}\\
+\begin{tabular}{l l l l}
+\toprule
+ & \textbf{Bipartite negation} & \textbf{Single \textit{niht}} & \textbf{Total}\\
 \hline
 Cologne & 64 (94,1\%) & 4 (5,9\%) & 68 (100\%)\\
 Regensburg & 6 (5,5\%) & 103 (94,5\%) & 109 (100\%)\\
 Zürich & 1 (1,3\%) & 78 (98,7\%) & 79 (100\%)\\
 \hline
 total & 71 (27,6\%) & 186 (72,4\%) & 256 (100\%)\\
-\hline\hline
+\bottomrule
 \end{tabular}
 \end{center}
 \begin{small}
@@ -297,235 +299,371 @@ Table: Variation in sentential negation in MHG charters by 1280 (\citealt[98]{sc
 \end{small}
 \end{frame}
 
+
 \subsection{Open issues}
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
+
+\begin{frame}{Negation: diachronic aspects}
 \framesubtitle{Open issues}
 
-Previous research paints an unclear picture:
+Previous research shows an unclear picture:
 
 \begin{itemize}
-    \item So far, we know that \textit{Jespersen's Cycle} underlies a strong areal variation in MHG.
-    \item While UG becomes a stage III language by 1250, CG remains a stage II language by the end of MHG.
-    \item Triggers for \textit{Jespersen's Cycle} are still unclear; previous studies suggest syntactic (\citealt{jaeger08,Breitbarth2014}) as well as phonological (\citealt{HertelimErscheinen}) factors.
-    \item Both accelerating and retarding factors need further investigation.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Diachrony of \textit{Jespersen's Cycle} in German}
-\framesubtitle{Open issues}
-
-\begin{itemize}
-    \item Therefore, we will present results from our two corpus-based studies:
-    \item \textbf{Referenzkorpus Mittelhochdeutsch} (ReM; ‚Reference Corpus of MHG‘) (1050–1350)
-    \item \textbf{Corpus der altdeutschen Originalurkunden bis zum Jahre 1300} (CAO; ‚Corpus of Old German Original Charters until the year 1300‘)
-\end{itemize}
-
-\end{frame}
-
-\section{Our database}
-\subsection{Reference Corpus of MHG}
-\begin{frame}{Our database}
-\framesubtitle{Reference Corpus of MHG}
-
+    \item So far, we know that \textit{Jespersen's Cycle} in MHG is subject to strong areal variation.
+    \item While UG becomes enters stage III by 1250, CG remains a stage II language by the end of MHG.
+    \item Triggers for \textit{Jespersen's Cycle} are still unclear.
     \begin{itemize}
-        \item \textbf{\textit{Referenzkorpus Mittelhochdeutsch}} (ReM; \citealt{kleinetal16,Klein2016}): freely available since 2016, contains texts (written between 1050 and 1350) from the entire Middle High German area 
-        \item contains about two million tokens and is PoS-tagged
-        \item consists of \textbf{well-balanced text genres} (e.g. Chivalric romance, prayers, charters or recipes) $\rightarrow$ text type-specific influences can be kept low
-         \item However, in \textbf{diachronic and diatopic matters}, the ReM is \textbf{not well-balanced}: Western Central and Eastern Upper German predominate and early texts are scarce.
-          \begin{itemize}
-              \item[\Radioactivity] Analyzing Eastern Central German is particularly problematic since these dialects were formed only a few centuries ago.
-              \item[\Radioactivity] Therefore, we will exclude ECG for the most part!
-          \end{itemize}
+    \item Previous studies suggest syntactic (\citealt{jaeger08,Breitbarth2014}) as well as phonological (\citealt{HertelimErscheinen}) factors.
     \end{itemize}
+    \item Both accelerating and inhibiting factors need further investigation.
+    
+\end{itemize}
+
 
 \end{frame}
 
-\begin{frame}{Our database}
-\framesubtitle{Reference Corpus of MHG}
+
+\begin{frame}{Negation: diachronic aspects}
+\framesubtitle{Open issues}
+
+We will present results from our two corpus-based studies:
+
+\begin{itemize}
+    \item \alert{Referenzkorpus Mittelhochdeutsch}  ‘Reference Corpus of MHG’ (ReM) (1050–1350)
+    \item \alert{Corpus der altdeutschen Originalurkunden bis zum Jahre 1300} ‘Corpus of Old German Original Charters until the year 1300’ (CAO)
+\end{itemize}
+
+\end{frame}
+
+
+
+\section{The empirical base}
+\subsection{The ReM}
+
+
+\begin{frame}{The empirical base}
+\framesubtitle{The ReM}
+
+\textbf{Referenzkorpus Mittelhochdeutsch (ReM) :}
+    \begin{itemize}
+        \item Freely available since 2016, contains texts from the entire Middle High German period (1050–1350) 
+        \item $\sim$ 2 millions tokens, PoS-tagged
+        \item \alert{balanced} in terms of text genres $\rightarrow$ text type-specific influences can be controlled for.
+ \begin{itemize}       
+         \item However, in \alert{diachronic and diatopic matters}, the ReM is \textbf{not well-balanced}: Western Central and Eastern Upper German predominate; early texts are scarce.
+\end{itemize}
+\end{itemize}
+
+{\small
+\begin{itemize}
+\item[\Pointinghand] East Central dialects are excluded for the most part (relatively young, only small text portions available from this region.
+\end{itemize}
+}
+
+{\tiny (\citealt{kleinetal16})}
+
+\end{frame}
+
+\begin{frame}{The empirical base}
+\framesubtitle{The ReM}
 
     \begin{itemize}
-        \item Although it uses ANNIS3 (\citealt{Krause2016}), ReM  \textbf{lacks syntactic annotations}. $\rightarrow$ limited use for complex syntactic phenomena
-        \item Furthermore: Crashes/overloads and occasional errors/bugs $\rightarrow$ ReM \textbf{doesn't run smoothly in some places yet}
-        \item Many queries for syntactic phemona must be substituted (e.g. with distance parameters)
-        \item For the syntactic variation: sample of 501 instances of \textit{ne ... niht} (using \textit{R}'s \textit{dplyr})
+        \item Although it uses ANNIS3 (\citealt{Krause2016}), the ReM  \alert{lacks syntactic annotations}. $\rightarrow$ limited use for complex syntactic phenomena
+        \item Furthermore: Crashes/overloads and occasional errors/bugs 
+        \item Queries for negation patterns are possible by indirect means (e.\,g. with distance parameters)
+        \item Sample of 501 instances of \textit{ne ... niht} (using \textit{R})
         \item Results presented here taken from \citet{hrbek21}
     \end{itemize}
 
 \end{frame}
 
-\subsection{Corpus of Old German Original Charters}
-\begin{frame}{Our database}
-\framesubtitle{Corpus of Old German Original Charters}
+\subsection{The CAO}
+
+
+\begin{frame}{The empirical base}
+\framesubtitle{The CAO}
+
+\textbf{Some background:}
 
 \begin{itemize}
-   \item \textbf{Corpus der altdeutschen Originalurkunden bis zum Jahre 1300} (CAO; Wilhelm et al. \citeyear{cao1}–\citeyear{cao5})
-    \item allows observation of diatopic differences from  1250 to 1300
-    \item \citet{beckerschallert21,beckerschallert22a,beckerschallert22b}, \citet{HertelimErscheinen}
+\item \textit{Corpus der altdeutschen Originalurkunden} \qu{Corpus of Old German Original Charters until 1300} (CAO) (Wilhelm et al. \citeyear{cao1}–\citeyear{cao5}).
+\begin{itemize}
+\item Paper edition comprising 5 Volumes plus supplementary materials; completed 2004.
+\item An electronic version is available online, however, with only rudimentary search functions. \href{http://tcdh01.uni-trier.de/cgi-bin/iCorpus/CorpusIndex.tcl}{\alert{\tiny{(Link)}}}
+\end{itemize}
 \end{itemize}
 
 \end{frame}
 
-\section{Involved factores in discussion}
-\begin{frame}{Involved factores in discussion}
 
-Before we take a closer look into our findings, we have to discuss a few phenomena which influenced the deletion of MHG \textit{ne} and \textit{ne ... niht}:
+
+\begin{frame}{The empirical base}
+\framesubtitle{The CAO}
+
 
 \begin{itemize}
-    \item \textbf{Phonological aspects} which caused \textit{ne} to disappear and
-    \item \textbf{Morphosyntactic aspects} which accelerated or delayed this development.
+\item Founded by Friedrich Wilhelm (1882–1932);
+\item total of 4617 charters; 4289 in German (to a lesser extent also other languages are included, e.\,g. Latin, Middle Dutch).
+\item Covers a period from 1200–1300; however, only 0.2\,\% of the materials date before 1250 (\citealt[42]{ganslmayer09}).
 \end{itemize}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lllll}
+\toprule
+& until 1279 & 1280–1289 & 1290–1299 & \textbf{Total}\\ 
+\cmidrule{1-5}
+No. & 621 & 1095 & 2901 & 4617\\
+\bottomrule
+\end{tabular}
+\caption{Extant charters w.\,r.\,t. different decades}
+\end{center}
+\end{table}
 
 \end{frame}
 
-\subsection{Phonological aspects}
 
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Phonological aspects}
+\begin{frame}{The empirical base}
+\framesubtitle{The CAO}
 
-During MHG, there are mainly two phonological developments which contradict a long lasting bipartite negation marker:
+\textbf{Pros and cons:}
 
 \begin{itemize}
-    \item \textbf{Reduction of unstressed syllables}: Since late OHG, unstressed syllables with full vowels (such as /a/, /i/, /u/) are slowly reduced to Schwa (/\textipa{@}/).
-    \begin{itemize}
-        \item This development continued until the end of MHG and was subject to a large areal variation.
-        \item While UG was covered quickly and comprehensively, the reduction in CG was significantly delayed.
-    \end{itemize}
+\item Issue date and place are usually mentioned;
+\item the materials are lexicographically analyzed (i.\,e. lemmatized) via the \textit{Wörterbuch der mittelhochdeutschen Urkundensprache} (WMU).
+\item Clear dominance of Upper German regions; see the map on the next slide. 
 \end{itemize}
 
-\pex
-\a
-OHG \textit{sunna} $\rightarrow$ MHG \textit{sunne}
-\a
-OHG \textit{umbigeban} $\rightarrow$ MHG \textit{umbegeben}
-\xe
+{\small
+\begin{itemize}
+\item[\Pointinghand] New studies demonstrate its validity for investigating areal variation in MHG (\citealt{beckerschallert21,beckerschallert22a,beckerschallert22b}; \citealt{HertelimErscheinen}).
+\end{itemize}
+}
 
 \end{frame}
 
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Phonological aspects}
+
+\begin{frame}{The empirical base}
+\framesubtitle{The CAO}
+
+	\begin{figure}
+		\includegraphics[width=.55\linewidth]{placeunique.png}
+		\caption{Number of charters per place \citep[background map adapted
+		from][]{wiesinger1983:rede}}
+	\end{figure}
+\end{frame}
+
+
+\section{Results}
+\subsection{Theoretical background}
+
+
+\begin{frame}{Results}
+\framesubtitle{Theoretical background}
+
+A more detailed look on factors influencing negation:
 
 \begin{itemize}
-    \item \textbf{Schwa (/\textipa{@}/) deletion}: During MHG, Schwa was deleted in reduction syllables and (prosodically) weak functional words (such as particles).
-    \begin{itemize}
-        \item \textit{ne} as a functional word was hit systematically: \textit{ne} $\rightarrow$ \textit{n} $\rightarrow$ \textit{en}
-        \item single /n/ could not survive; a so-called \glqq Stützvokal\grqq{} (\citealt{Nuebling1992}, Paul et al. \citeyear{paul07}) had to be inserted $\rightarrow$ reduction to /\textipa{@}/ and deletion all over again
-        \item From this perspective, MHG \textit{ne} was doomed to death.
-    \end{itemize}
+    \item bipartite negation marker \textit{ne ... niht} mainly attested in Western Central German texts 
+    \item early loss (or no use at all) in Upper German texts
+    \item early loss in V1 clauses, preservation in embedded clauses (with Vend)
+    \item (morphologically) complex verbs with prefixes (as well as participles formed with \textit{ge-}) show an accelerated loss of \textit{ne}/\textit{en}
 \end{itemize}
 
-\pex
-\a
-early MHG \textit{kel.be.re} $\rightarrow$ late MHG \textit{kel.ber}
-\a
-OHG \textit{ni} $\rightarrow$ early MHG \textit{ne} $\rightarrow$ \textit{n} $\rightarrow$ late MHG \textit{en}
-\xe
+{\tiny (\citealt{behaghel18,Gaertner1977,Pickl2017}; \citealt{schueler16,schueler17}; \citealt{hrbek21})}
 
 \end{frame}
 
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Phonological aspects}
+
+\begin{frame}{Results}
+\framesubtitle{Theoretical background}
+
+Prosody-based approach (\citealt{HertelimErscheinen}):
 
 \begin{itemize}
-    \item Both developments can be found in the entire MHG area; however, it first started in UG and then slowly spread to CG (\citealt{Triwunatz1913}, \citealt{lindgren53}, \citealt{Klein2005}, \citealt{Buethe-Scheider2017}).
-    \item Completed \textbf{during the 13\textsuperscript{th} century in UG}, but \textbf{not until early 16\textsuperscript{th} century for CG}. 
-    \item[\Radioactivity] Until the development is completely finished, MHG \textit{ne} (as well as \textit{ne ... niht}) remained a \textit{dead man walking}.
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Phonological aspects}
-
-\begin{itemize}
-    \item One more phonological development – \textbf{fixed metric trochee:} 
-    \item During MHG, the trochee (\textipa{\'xx}) becomes more and more fixed $\rightarrow$ targeted intonation structure
-    \item In order to maintain a trochee in (morphologically) complex words, syllables get deleted:
-\end{itemize}
-
-\pex
-\a
-wehsele   $>$  wechsel\alert{\emptyset} ‘exchange’\\
-(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{$\sigma$\textsubscript{r}})\textsubscript{F})\textsubscript{$\omega$} $>$   (($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{\emptyset})\textsubscript{F})\textsubscript{$\omega$}
-\a
-b. manete $>$ man\alert{\emptyset}te ‘admonished.{\textsc{3SG}}’\\
-(($\sigma$\textsubscript{s}\alert{$\sigma$\textsubscript{r}}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$} $>$   (($\sigma$\textsubscript{s}\alert{\emptyset}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}
-\xe
-
-\end{frame}
-
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Phonological aspects}
-
-\begin{itemize}
-    \item (Morphologically) simple words (e.g. Sg. Nom.) containing two (or more) syllables lose one (already reduced) syllable
-    \item This is in order to form a trochee in more complex scenarios (e.g. Pl. Gen.).
-    \item This holds true for functional words such as conjuncts and particles.
-\end{itemize}
-\vspace{-0.5cm}
-\begin{figure} 
-\begin{minipage}[t]{0.4755\textwidth}
-\pex a. swane    $>$ swan ‘swan’\\
-(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
-        (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
-\end{minipage}
-\begin{minipage}[t]{0.475\textwidth}
-\exdisplay b. vnde         $>$ vnd ‘and’\\
-(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
-         (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
-\end{minipage} 
-\end{figure}
-
-\end{frame}
-
-\subsection{Morphosyntactic aspects}
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Morphosyntactic aspects}
-Previous studies (\citealt{behaghel18,Gaertner1977,Pickl2017}; \citealt{schueler16,schueler17}, \citealt{hrbek21}) discuss the following points:
-
-\begin{itemize}
-    \item bipartite negation marker \textit{ne ... niht} mainly attested in Western Central German texts ...
-    \item ... and early loss / no use in Upper German texts
-    \item early loss in V1 clauses, preservation in VF clauses
-    \item (morphologically) complex verbs with prefixes (such as participles) tend to accelerate the loss of \textit{ne}/\textit{en}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Involved factores in discussion}
-\framesubtitle{Morphosyntactic aspects}
-
-All of these aspects can be explained with Hertels \citeyear{HertelimErscheinen} prosody based approach:
-
-\begin{itemize}
-    \item \textit{ne} as a weak functional word gets reduced and fells victim to /\textipa{@}/-deletion quickly.
+    \item \textit{ne} (reduced variant of OHG \textit{ni} as a weak functional word gets reduced and fells victim to /ə/-deletion quickly.
     \item In V1 clauses with \textit{ne}, the first syllable is unstressed – no trochee possible!
-    \item The same holds true for prefixed verbs (espc. with an reduction syllable like \textit{ge-})!
+    \begin{itemize}
+    \item In MHG, the trochee becomes the preferred foot structure.
+    \item e.\,g. wehsele $>$  wechsel\alert{$\varnothing$} ‘exchange’\\
+(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{$\sigma$\textsubscript{r}})\textsubscript{F})\textsubscript{$\omega$} $>$   (($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{$\varnothing$})\textsubscript{F})\textsubscript{$\omega$}
+    \end{itemize}
+    \item The same holds true for prefixed verbs or participles with \textit{ge-})!
     \item VF clauses, on the other hand, preserve the MHG trochee $\rightarrow$ last resort for \textit{ne ... niht}
 \end{itemize}
 
 \end{frame}
 
-\section{Our results}
 
-\subsection{Diachronic variation (ReM)}
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Diachronic variation (ReM)}
+
+%
+%\section{Involved factores in discussion}
+%\begin{frame}{Involved factores in discussion}
+%
+%Before we take a closer look into our findings, we have to discuss a few phenomena which influenced the deletion of MHG \textit{ne} and \textit{ne ... niht}:
+%
+%\begin{itemize}
+%    \item \textbf{Phonological aspects} which caused \textit{ne} to disappear and
+%    \item \textbf{Morphosyntactic aspects} which accelerated or delayed this development.
+%\end{itemize}
+%
+%\end{frame}
+%
+%\subsection{Phonological aspects}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Phonological aspects}
+%
+%During MHG, there are mainly two phonological developments which contradict a long lasting bipartite negation marker:
+%
+%\begin{itemize}
+%    \item \textbf{Reduction of unstressed syllables}: Since late OHG, unstressed syllables with full vowels (such as /a/, /i/, /u/) are slowly reduced to Schwa (/\textipa{@}/).
+%    \begin{itemize}
+%        \item This development continued until the end of MHG and was subject to a large areal variation.
+%        \item While UG was covered quickly and comprehensively, the reduction in CG was significantly delayed.
+%    \end{itemize}
+%\end{itemize}
+%
+%\pex
+%\a
+%OHG \textit{sunna} $\rightarrow$ MHG \textit{sunne}
+%\a
+%OHG \textit{umbigeban} $\rightarrow$ MHG \textit{umbegeben}
+%\xe
+%
+%\end{frame}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Phonological aspects}
+%
+%\begin{itemize}
+%    \item \textbf{Schwa (/\textipa{@}/) deletion}: During MHG, Schwa was deleted in reduction syllables and (prosodically) weak functional words (such as particles).
+%    \begin{itemize}
+%        \item \textit{ne} as a functional word was hit systematically: \textit{ne} $\rightarrow$ \textit{n} $\rightarrow$ \textit{en}
+%        \item single /n/ could not survive; a so-called \glqq Stützvokal\grqq{} (\citealt{Nuebling1992}, Paul et al. \citeyear{paul07}) had to be inserted $\rightarrow$ reduction to /\textipa{@}/ and deletion all over again
+%        \item From this perspective, MHG \textit{ne} was doomed to death.
+%    \end{itemize}
+%\end{itemize}
+%
+%\pex
+%\a
+%early MHG \textit{kel.be.re} $\rightarrow$ late MHG \textit{kel.ber}
+%\a
+%OHG \textit{ni} $\rightarrow$ early MHG \textit{ne} $\rightarrow$ \textit{n} $\rightarrow$ late MHG \textit{en}
+%\xe
+%
+%\end{frame}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Phonological aspects}
+%
+%\begin{itemize}
+%    \item Both developments can be found in the entire MHG area; however, it first started in UG and then slowly spread to CG (\citealt{Triwunatz1913}, \citealt{lindgren53}, \citealt{Klein2005}, \citealt{Buethe-Scheider2017}).
+%    \item Completed \textbf{during the 13\textsuperscript{th} century in UG}, but \textbf{not until early 16\textsuperscript{th} century for CG}. 
+%    \item[\Radioactivity] Until the development is completely finished, MHG \textit{ne} (as well as \textit{ne ... niht}) remained a \textit{dead man walking}.
+%\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Phonological aspects}
+%
+%\begin{itemize}
+%    \item One more phonological development – \textbf{fixed metric trochee:} 
+%    \item During MHG, the trochee (\textipa{\'xx}) becomes more and more fixed $\rightarrow$ targeted intonation structure
+%    \item In order to maintain a trochee in (morphologically) complex words, syllables get deleted:
+%\end{itemize}
+%
+%\pex
+%\a
+%wehsele   $>$  wechsel\alert{\emptyset} ‘exchange’\\
+%(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{$\sigma$\textsubscript{r}})\textsubscript{F})\textsubscript{$\omega$} $>$   (($\sigma$\textsubscript{s}$\sigma$\textsubscript{r}\alert{\emptyset})\textsubscript{F})\textsubscript{$\omega$}
+%\a
+%b. manete $>$ man\alert{\emptyset}te ‘admonished.{\textsc{3SG}}’\\
+%(($\sigma$\textsubscript{s}\alert{$\sigma$\textsubscript{r}}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$} $>$   (($\sigma$\textsubscript{s}\alert{\emptyset}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}
+%\xe
+%
+%\end{frame}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Phonological aspects}
+%
+%\begin{itemize}
+%    \item (Morphologically) simple words (e.g. Sg. Nom.) containing two (or more) syllables lose one (already reduced) syllable
+%    \item This is in order to form a trochee in more complex scenarios (e.g. Pl. Gen.).
+%    \item This holds true for functional words such as conjuncts and particles.
+%\end{itemize}
+%%\vspace{-0.5cm}
+%%\begin{figure} 
+%%\begin{minipage}[t]{0.4755\textwidth}
+%%\pex a. swane    $>$ swan ‘swan’\\
+%%(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
+%%        (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
+%%\end{minipage}
+%%\begin{minipage}[t]{0.475\textwidth}
+%%\exdisplay b. vnde         $>$ vnd ‘and’ \\
+%%(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
+%%        (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
+%%\end{minipage} 
+%%\end{figure}
+%
+%\begin{exe}
+%\ex swane    $>$ swan ‘swan’\\
+%(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
+%        (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
+%\ex vnde         $>$ vnd ‘and’ \\
+%(($\sigma$\textsubscript{s}$\sigma$\textsubscript{r})\textsubscript{F})\textsubscript{$\omega$}  $>$ 
+%        (($\sigma$\textsubscript{s}\alert{\emptyset})\textsubscript{$\omega$}
+%\end{exe}
+%
+%\end{frame}
+%
+%\subsection{Morphosyntactic aspects}
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Morphosyntactic aspects}
+%Previous studies (\citealt{behaghel18,Gaertner1977,Pickl2017}; \citealt{schueler16,schueler17}, \citealt{hrbek21}) discuss the following points:
+%
+%\begin{itemize}
+%    \item bipartite negation marker \textit{ne ... niht} mainly attested in Western Central German texts ...
+%    \item ... and early loss / no use in Upper German texts
+%    \item early loss in V1 clauses, preservation in VF clauses
+%    \item (morphologically) complex verbs with prefixes (such as participles) tend to accelerate the loss of \textit{ne}/\textit{en}
+%\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}{Involved factores in discussion}
+%\framesubtitle{Morphosyntactic aspects}
+%
+%All of these aspects can be explained with Hertels \citeyear{HertelimErscheinen} prosody based approach:
+%
+%\begin{itemize}
+%    \item \textit{ne} as a weak functional word gets reduced and fells victim to /\textipa{@}/-deletion quickly.
+%    \item In V1 clauses with \textit{ne}, the first syllable is unstressed – no trochee possible!
+%    \item The same holds true for prefixed verbs (espc. with an reduction syllable like \textit{ge-})!
+%    \item VF clauses, on the other hand, preserve the MHG trochee $\rightarrow$ last resort for \textit{ne ... niht}
+%\end{itemize}
+%
+%\end{frame}
+%
+%\end{document}
+
+
+\subsection{ReM data}
+
+
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
     
     \begin{itemize}
-        \item \textit{Jespersen's Cycle} (all three stages) can be observed in many West Germanic languages, e.g. in Low German (\citealt{Breitbarth2014}). MHG, however, turns out to be problematic.
-        \item ReM enables us to observe the history of negation, but \textbf{only between 1150 and 1350}
-        \item \textit{ne} underwent a \textit{lexical split} creating a homophone \textit{ne}\textsubscript{2} with exceptive meaning – ReM does not differentiate between \textit{ne}\textsubscript{1} and \textit{ne}\textsubscript{2}
-        \item Neglecting diatopic variation leads to results similar to \citet{jaeger08} and \citet{Pickl2017}: \textit{ne} gets replaced by \textit{niht} early on.
+        \item \textit{ne} underwent a \textit{lexical split} creating a homophone \textit{ne}\textsubscript{2} with exceptive meaning – the ReM does not differentiate between \textit{ne}\textsubscript{1} and \textit{ne}\textsubscript{2}
+        \item Ignoring diatopic variation for the time being, our results confirms the findings of \citet{jaeger08} and \citet{Pickl2017}: \textit{ne} gets replaced by \textit{niht} early on.
     \end{itemize}
     
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Diachronic variation (ReM)}
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
     
     \begin{figure}[h]
 \centering
@@ -534,256 +672,380 @@ All of these aspects can be explained with Hertels \citeyear{HertelimErscheinen}
     
 \end{frame}
 
-\subsection{Diatopic variation (ReM \& CAO)}
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Diatopic variation (ReM)}
-    \begin{itemize}
-        \item The omission of diatopic variation gives the impression that the classical \textit{Jespersen's Cycle} did not occur.
-        \item Taking into account the \textbf{dialectal colouring} of the original texts, we get a \textbf{completely different picture} supporting \citet{schueler16,schueler17} and \citet{HertelimErscheinen}:
-        \begin{itemize}
-            \item MHG can be broken down into four major variants: Eastern \& Western Upper German and Eastern \& Western Central German.
-            \item Bear in mind that the Eastern Central German dialects can only be meaningfully analysed in the last third of MHG (from 1250) due to the lack of traditional texts $\rightarrow$ we will largely \textbf{exclude ECG} from the discussion.
-        \end{itemize}
-        \item Now we can clearly see that the \textbf{negation change differs considerably} in the individual areas:
-    \end{itemize}
+
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
+
+\begin{itemize}
+\item MHG can be broken down into four major variants: 
+\begin{itemize}
+\item East and West Upper German
+\item East and Central German (from 1250 onwards)
+\end{itemize}
+\item Negation patterns vary considerably in the different regions.
+\end{itemize}
+
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Diatopic variation (ReM)}
 
-\begin{small}
+
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
+
+\begin{table}
 \begin{center}
-\begin{tabular}{c c c | c c | c c}
-\hline\hline
- & East UG. &  & West UG. & & West CG. & \\
- & Bipartite & Post & Bipartite & Post & Bipartite & Post\\
+\begin{tabular}{c c c c c}
+\toprule
+& \multicolumn{2}{c}{\textbf{East Upper German}} & \multicolumn{2}{c}{\textbf{West Upper German}}   \\
+\cmidrule{2-3}
+\cmidrule{4-5}
+ & \textit{ne \ldots\ niht} & \textit{niht}  & \textit{ne \ldots\ niht}  & \textit{niht}  \\
 \hline
-\alert{1150–1200} & \alert{785} & \alert{686} & \alert{47} & \alert{72} & 101 & 289 \\
-1200–1250 & 154 & 459 & \alert{113} & \alert{115} & \alert{235} & \alert{47}\\
-1250–1300 & 101 & 611 & 45 & 415 & \alert{413} & \alert{199}\\
-1300–1350 & 59 & 869 & 56 & 310 & \alert{676} & \alert{527}\\
+1050–1100 & 0 & 0 & 0 & 0 \\
 \hline
-Total: & 1099 & 2625 & 261 & 912 & 1427 & 1064\\
- & total: & 3724 & total: & 1173 & total: & 2491\\
-\hline\hline
+1100–1150 & 0 & 0 & 0 & 0 \\
+\hline
+\alert{1150–1200} & \alert{785} & \alert{686} & 47 & 72 \\
+\hline
+1200–1250 & 154 & 459 & 113 & 115 \\
+\hline
+1250–1300 & 101 & 611 & 45 & 415\\
+\hline
+1300–1350 & 59 & 869 & 56 & 310 \\
+\hline
+\textbf{total} & 1099 & 2625 & 261 & 912\\
+\bottomrule
 \end{tabular}
 \end{center}
-\end{small}
+\caption{Phase II und III in Upper German }
+\end{table}
+
+\end{frame}
+
+
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
+
+\begin{table}
 \begin{center}
-Table: Frequencies of stage II \& III negation in comparison
+\begin{tabular}{c c c c c}
+\toprule
+& \multicolumn{2}{c}{\textbf{East Central German}} & \multicolumn{2}{c}{\textbf{West Central German}}   \\
+\cmidrule{2-3}
+\cmidrule{4-5}
+ & \textit{ne \ldots\ niht} & \textit{niht}  & \textit{ne \ldots\ niht}  & \textit{niht}  \\
+\hline
+1050–1100 & 0 & 0 & (2) & (2)\\
+\hline
+1100–1150 & 0 & 0 & (2) & (2)\\
+\hline
+1150–1200 & 0 & 0 & 101 & 289\\
+\hline
+1200–1250 & 0 & 0 & 235 & 47\\
+\hline
+1250–1300 & \alert{113} & \alert{95} & 413 & 199\\
+\hline
+1300–1350 & \alert{141} & \alert{537} & 676 & 527\\
+\hline
+\textbf{total} & 254 & 632 & 1427 & 1064\\
+\bottomrule
+\end{tabular}
 \end{center}
+\caption{Phase II and III in Central German}
+\end{table}
+\end{frame}
+
+
+
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
+
+\begin{itemize}
+\item \textbf{Upper German}: 
+\begin{itemize} 
+\item Rapid change from bipartite to postverbal \textit{niht} between 1150 and 1200. 
+\item After 1250, almost every negated clause contains \alert{only \textit{niht}} $\rightarrow$ transition to stage III
+\end{itemize}
+\textbf{Western Central German}: 
+\begin{itemize}
+\item \alert{Stable bipartite negation} until the end of the MHG period.
+\item The transition from stage II to III negation seems to take place after 1350. \textit{ne ... niht} stays the \textbf{main strategy} for 
+\item Fluctuations due to two single texts with an unusal profile (potential influence from West Upper German)
+expressing negation.
+\end{itemize}
+\end{itemize}
+
+{\small
+\begin{itemize}
+\item[\Pointinghand] Evidence for a stable stage II in MHG!
+\end{itemize}
+}    
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Diatopic variation (ReM)}
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
 
-    \begin{itemize}
-            \item \textbf{Upper German}: short peak between 1150 and 1200 in which the negation shifts from bipartite (\textit{ne ... niht}) to single, postverbal \textit{niht}. After 1250, almost every negated clause contains \textbf{\textit{niht} only} $\rightarrow$ transition to stage III
-            \item \textbf{Western Central German}: \textbf{bipartite negation marker in its peak} from 1200 to the end of MHG. 
-            \begin{itemize}
-                \item The transition from stage II to III negation seems to take place after 1350. \textit{ne ... niht} stays the \textbf{main strategy} for expressing negation.
-                \item The deviation between 1150 and 1200 is due to two single texts: \textit{Trier Versionen zum Interlinearpsalter} and \textit{Trier Psalmen} which behave more like WUG texts.
-                \end{itemize}
-    \end{itemize}
+\textbf{Verb orders with bipartite negation:}
     
-\centering    \textbf{ $\rightarrow$ Evidence for a stable stage II in MHG!}
+\begin{itemize}
+\item \alert{V1 clauses are rare} – this is due to prosodic reasons, as we discussed earlier.
+\item \alert{V2} is the \alert{most frequent} verb order, but its rate is \alert{decreasing} by comparison with V-end (or V-later).
+\item \alert{V-end} seems to have a \alert{preservative effect} (cf. \citealt[245]{behaghel18}).
+\end{itemize}
 
-\end{frame}
-
-\subsection{In-depth analysis (ReM \& CAO)}
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Syntactic variation (ReM)}
-    
-    \begin{itemize}
-        \item \textbf{V1 clauses are rare} – this is due to prosodic reasons, as we discussed earlier.
-        \item \textbf{V2} is the \textbf{most frequent} verb order, but is \textbf{decreasing} until the end of MHG for the \textbf{favor of verb-later and verb-final clauses}.
-        \item \textbf{VF seems to have a preservative effect}, as \citet[245]{behaghel18} already pointed out $\rightarrow$ we can observe a steady increase in VF-clauses (although V2 remains the most frequent position in total)
-        \item matches the results of our CAO data and \citet{HertelimErscheinen}
-        \item This pattern \textbf{doesn't seem to vary} between the four MHG dialects.
-        
-    \end{itemize}
+{\small
+\begin{itemize}
+\item[\Pointinghand] No significant areal variation in this respect (matching the results of \citealt{HertelimErscheinen}).
+\end{itemize}
+}
     
 \end{frame}
 
-\begin{frame}
-\frametitle{Our results}
-\framesubtitle{Syntactic variation (ReM)}
 
+\begin{frame}{Our results}
+\framesubtitle{ReM data}
+
+
+\begin{table}
 \begin{center}
 \begin{tabular}{c c c c}
 \toprule
- & \textbf{Verb-initial} & \textbf{Verb-second} & \textbf{Verb-later/-final}\\
+ & \textbf{V1} & \textbf{V2} & \textbf{V-end | V-later}\\
 \hline
+1150–1200 & 11 & 124 & 16\\
 \hline
-1150–1200 & 11 & \alert{124} & \alert{16}\\
-1200–1250 & 3 & \alert{59} & \alert{21}\\
-1250–1300 & 14 & \alert{44} & \alert{48}\\
-1300–1350 & 14 & \alert{90} & \alert{57}\\ 
+1200–1250 & 3 & 59 & 21\\
 \hline
+1250–1300 & 14 & 44 & 48\\
 \hline
-\textbf{Total:} & 42 & 317 & 142\\
+1300–1350 & 14 & 90 & 57\\ 
+\hline
+\textbf{gesamt} & 42 & 317 & 142\\
+\bottomrule
 \end{tabular}
+\caption{Bipartite Negation by verb order}
 \end{center}
+\end{table}
+
+\end{frame}
+
+
+
+
+\subsection{CAO-data}
+
+\begin{frame}{Our results}
+\framesubtitle{CAO-data}
+
+\textbf{Phenomena:}
+
+\begin{itemize}
+\item Graphical variants of the \alert{clitic negation} norm. \textit{ne, en}, etc.
+\begin{itemize}
+\item Some variants (not exhaustive) are given in (\ref{klitisch}).
+\item Spellings with \textit{i} are indicative of a stage predating phonological weakening.
+\end{itemize}
+\item \alert{Simple negation} (\textit{en} or \textit{niht}) vs. \alert{discontinuous negation.}
+\begin{itemize}
+\item Some variants in (\ref{voll}).
+\end{itemize}
+\end{itemize}
+
+
+\begin{exe}
+\ex  \textit{en(-), ên(-), em-, jn(-), in(-), ien, n-, -n}  (\citealt[1292–1293]{wmu2}) \label{klitisch}
+\ex \textit{niht(-), níht, nîht, njcht, n\supr{e}{i}cht, nieht, nivht, n\supr{u}{o}ht, nuht/nvht} (\citealt[1312–1315]{wmu2})  \label{voll}
+\end{exe}
+
+\end{frame}
+
+\begin{frame}{Our results}
+\framesubtitle{CAO-data}
+
+\textbf{Queries:}
+
+\begin{itemize}
+\item We transferred the electronic version of the CAO to an SQL-database. With the aid of the \textit{RNNTagger} (\citealt{schmid2020}), we annotated the data for POS and morphosyntactic information.
+\item This enabled us to query directly for the relevant lemmas \textit{he} and \textit{niht} via the tag \texttt{PTKNEG} (STTS tagset).
+\item Random sample of 10\,\% of all hits for negation structures (with \textit{R}), manually corrected
+\item Graphical variants were annotated exhaustively for vowel quality. 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Our results}
+\framesubtitle{CAO-data}
+
+\begin{table}
 \begin{center}
-Table: Variation in verb order with the bipartite negation marker
+\includegraphics[scale=1]{Graphievarianten.png}
 \end{center}
-
-\end{frame}
-
-\begin{frame}{Our results}
-\framesubtitle{Syntactic variation (CAO)}
-
+\caption{Graphical variants of the clitic negation}
+\end{table}
 
 
 \end{frame}
 
-\begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
 
-\begin{itemize}
-    \item In previous literature, it is sometimes mentioned that the preverbal marker (in combination with \textit{niht}) changes its direction when acting like a clitic (e.g. \citealt{Szczepaniak2010}).
-    \item While being a proclitic element in the beginning (6), it can appear as an enclitic later on (7).
-    \item This is most commonly explained with phonotactic reasons (sonority).
-\end{itemize}
-
-\pex[interpartskip=1ex]
-\begingl
-\gla Ein reine wif \textbf{enkan} nýt baz Verdýuen boeſer wive haz//
-\glb a pure woman {\textsc{NEG}}=can \textsc{NEG} better earn evil women hatred//
-\glft M357-G1 0a, 5409–5410 (Das Leben der Gräfin Yolanda von Vianden M)//
-\endgl
-\xe
-\end{frame}
 
 \begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
+\framesubtitle{CAO-data}
 
-\pex[interpartskip=1ex]
-\begingl
-\gla \textbf{ſine} uerſuchtenez an ſi niht mere//
-\glb they={\textsc{NEG}} tried=it without her \textsc{NEG} more//
-\glft M121V-G1 0a, 16768 (Kaiserchronik A, Manuscript V)//
-\endgl
-\xe
-
-\end{frame}
-
-\begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
-
-\begin{itemize}
-    \item As you will see on the next slide, we couldn't observe such a change.
-    \item However, something did change: \textbf{clitization} (at least on graphematic level) became much more scarce – after 1250, the separately written \textit{ne} is the most frequent variant (8).
-\end{itemize}
-
-\pex[interpartskip=1ex]
-\begingl
-\gla vvan ſie den gotiſ zorn . nivt \textbf{\textipa{\=i}} vorhtin//
-\glb why they the God.{\textsc{GEN}} wrath {} \textsc{NEG} \textsc{NEG} feared//
-\glft M065-G1 62aa, 6–7 (Linzer Entechrist)//
-\xe
-
-\end{frame}
-
-\begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=7cm]{Clitic.png}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=7cm]{CliticD.png}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
-\renewcommand{\arraystretch}{1.25}
-\begin{center}\resizebox{\textwidth}{!}{%
-\begin{tabular}{c c c c c c c}
-\hline\hline
- & Eastern UG & & & Western CG & & \\
- & Proclitic & Separate & Enclitic & Proclitic & Separate & Enclitic\\
-\hline
-1150–1200 & 72 & 29 & 28 & 3 & 3 & 0\\
-1200–1250 & 10 & 6 & 7 & 16 & 4 & 0\\
-1250–1300 & 11 & 3 & 1 & 2 & 1 & 0\\
-1300–1350 & 6 & 6 & 0 & 6 & 3 & 0\\
-\hline
-Insgesamt: & 99 & 44 & 36 & 27 & 11 & 0\\
-\hline
- & Eastern CG & & & Western CG & &\\
- & Proclitic & Separate & Enclitic & Proclitic & Separate & Enclitic\\
-\hline
-1150–1200 & 0 & 0 & 0 & 5 & 6 & 0\\
-1200–1250 & 0 & 0 & 0 & 31 & 7 & 0\\
-1250–1300 & 7 & 9 & 0 & 34 & 35 & 1\\
-1300–1350 & 6 & 15 & 0 & 47 & 69 & 1\\
-\hline
-Insgesamt: & 13 & 24 & 0 & 117 & 117 & 2\\
-\hline\hline
-\end{tabular}}
-\end{center}
-
+\begin{table}
 \begin{center}
-Table: Diachrony of clitic \textit{ne} in MHG dialects
+\includegraphics[scale=1.4]{Doppelnegationneu.png}
 \end{center}
+\caption{Bipartite negation (\textit{ne \ldots\ niht}) in the CAO}
+\end{table}
+
 
 \end{frame}
+
 
 \begin{frame}{Our results}
-\framesubtitle{Direction of clitic \textit{ne}}
+\framesubtitle{CAO-data}
 
-\begin{itemize}
-    \item There was no such a thing as a change of directional change regarding clitization.
-    \item Until 1250, proclitic \textit{ne} was the main variant; afterwards, separately written \textit{ne} became the most frequently used type.
-    \item Concerning enclitic \textit{ne}: We only found a few instances of this type and they are almost always limited on early Bavarian texts.
-\end{itemize}
+\begin{table}
+\begin{center}
+\includegraphics[scale=1.7]{Einfachnegationneu.png}
+\end{center}
+\caption{Simplex negation (\textit{niht}) in the CAO}
+\end{table}
+
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Summary \& conclusion}
+
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\begin{itemize}
+%    \item In previous literature, it is sometimes mentioned that the preverbal marker (in combination with \textit{niht}) changes its direction when acting like a clitic (e.g. \citealt{Szczepaniak2010}).
+%    \item While being a proclitic element in the beginning (6), it can appear as an enclitic later on (7).
+%    \item This is most commonly explained with phonotactic reasons (sonority).
+%\end{itemize}
+%
+%\pex[interpartskip=1ex]
+%\begingl
+%\gla Ein reine wif \textbf{enkan} nýt baz Verdýuen boeſer wive haz//
+%\glb a pure woman {\textsc{NEG}}=can \textsc{NEG} better earn evil women hatred//
+%\glft M357-G1 0a, 5409–5410 (Das Leben der Gräfin Yolanda von Vianden M)//
+%\endgl
+%\xe
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\pex[interpartskip=1ex]
+%\begingl
+%\gla \textbf{ſine} uerſuchtenez an ſi niht mere//
+%\glb they={\textsc{NEG}} tried=it without her \textsc{NEG} more//
+%\glft M121V-G1 0a, 16768 (Kaiserchronik A, Manuscript V)//
+%\endgl
+%\xe
+%
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\begin{itemize}
+%    \item As you will see on the next slide, we couldn't observe such a change.
+%    \item However, something did change: \textbf{clitization} (at least on graphematic level) became much more scarce – after 1250, the separately written \textit{ne} is the most frequent variant (8).
+%\end{itemize}
+%
+%\pex[interpartskip=1ex]
+%\begingl
+%\gla vvan ſie den gotiſ zorn . nivt \textbf{\textipa{\=i}} vorhtin//
+%\glb why they the God.{\textsc{GEN}} wrath {} \textsc{NEG} \textsc{NEG} feared//
+%\glft M065-G1 62aa, 6–7 (Linzer Entechrist)//
+%\xe
+%
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=7cm]{Clitic.png}
+%\end{figure}
+%
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=7cm]{CliticD.png}
+%\end{figure}
+%
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%\renewcommand{\arraystretch}{1.25}
+%\begin{center}\resizebox{\textwidth}{!}{%
+%\begin{tabular}{c c c c c c c}
+%\hline\hline
+% & Eastern UG & & & Western CG & & \\
+% & Proclitic & Separate & Enclitic & Proclitic & Separate & Enclitic\\
+%\hline
+%1150–1200 & 72 & 29 & 28 & 3 & 3 & 0\\
+%1200–1250 & 10 & 6 & 7 & 16 & 4 & 0\\
+%1250–1300 & 11 & 3 & 1 & 2 & 1 & 0\\
+%1300–1350 & 6 & 6 & 0 & 6 & 3 & 0\\
+%\hline
+%Insgesamt: & 99 & 44 & 36 & 27 & 11 & 0\\
+%\hline
+% & Eastern CG & & & Western CG & &\\
+% & Proclitic & Separate & Enclitic & Proclitic & Separate & Enclitic\\
+%\hline
+%1150–1200 & 0 & 0 & 0 & 5 & 6 & 0\\
+%1200–1250 & 0 & 0 & 0 & 31 & 7 & 0\\
+%1250–1300 & 7 & 9 & 0 & 34 & 35 & 1\\
+%1300–1350 & 6 & 15 & 0 & 47 & 69 & 1\\
+%\hline
+%Insgesamt: & 13 & 24 & 0 & 117 & 117 & 2\\
+%\hline\hline
+%\end{tabular}}
+%\end{center}
+%
+%\begin{center}
+%Table: Diachrony of clitic \textit{ne} in MHG dialects
+%\end{center}
+%
+%\end{frame}
+%
+%\begin{frame}{Our results}
+%\framesubtitle{Direction of clitic \textit{ne}}
+%
+%\begin{itemize}
+%    \item There was no such a thing as a change of directional change regarding clitization.
+%    \item Until 1250, proclitic \textit{ne} was the main variant; afterwards, separately written \textit{ne} became the most frequently used type.
+%    \item Concerning enclitic \textit{ne}: We only found a few instances of this type and they are almost always limited on early Bavarian texts.
+%\end{itemize}
+%
+%\end{frame}
+
+\begin{frame}{Conclusions}
+
+\textbf{Diatopic, diachronic and syntactic variation} observed during \alert{loss of the MHG bipartite negation marker}, using the \alert{(ReM}) and the \alert{CAO}\ldots
 
 \begin{itemize} 
-\item \textbf{Illustration of diatopic, diachronic and syntactic variation} observed during \textbf{loss of the MHG bipartite negation marker} using mainly a large corpus (\textbf{ReM}), combined with the results of in-depth-study based on 13th century charters (\textbf{CAO})
-\begin{itemize} 
-\item \textbf{Upper German:} short use and early loss
-\item \textbf{Western Central German:} long use and delayed loss
-\item \textbf{Across all dialects:} early loss in V1 clauses due to prosodic reasons
+\item \alert{Upper German:} short use and early loss
+\item \alert{Western Central German:} long use and delayed loss
+\item \alert{Across all dialects:} early loss in V1 clauses due to prosodic reasons
 \end{itemize} 
-\end{itemize} 
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Summary \& conclusion}
-\begin{itemize} 
 
-\item \textbf{Comprehensive explanation} of this variation from a \textbf{phonological perspective}:
-\begin{itemize} 
-\item Analysis of the preverbal marker as a weak function word being reducted to Schwa
-\item Schwa gets deleted during MHG (ENHG for WCG) $\rightarrow$ stray consonant /n/ or insertion of a \glqq Stützvokal\grqq{} $\rightarrow$ Reduction and deletion all over again
-\item Final loss of remaining stray nasal due to prosodic reasons (sonority not matching; trochee as prosodic goal)
-\end{itemize}
-\item \textbf{Conclusion}: loss of \textit{ne/en} as well as syntactic variation can be explained with phonological/prosodical developments taking place during MHG! 
-\end{itemize}
-\end{frame}
 
 \begin{frame}
 
@@ -796,12 +1058,15 @@ tassel=red!70!black,signpost=\scalebox{1.25}{
 \parbox{2cm}{\textbf{\textcolor{black}{
 \begin{center}{Grammar \& \\Corpora}\end{center}}}}},
 signcolour=brown!70!gray,
-signback=white!80!brow]
+signback=white!80!brown]
 \end{tikzpicture}
 
 \end{center}
 
 \end{frame}
+
+\setbeamertemplate{footline}{}
+\appendix
 
 \begin{frame}[allowframebreaks]
 \renewcommand\refname{}
@@ -838,8 +1103,8 @@ signback=white!80!brow]
  & \multicolumn{2}{c}{Eastern Central German} \\
  & Bipartite & Postverbal\\
 \hline
-1150–1200 & \emptyset & \emptyset\\
-1200–1250 & \emptyset & \emptyset\\
+1150–1200 & – & –\\
+1200–1250 & – & –\\
 \alert{1250–1300} & \alert{113} & \alert{95}\\
 \alert{1300–1350} & \alert{141} & \alert{537}\\
 \hline
@@ -931,6 +1196,8 @@ Table: Verb position with the bipartite negation in the four major dialect gruop
     
 \end{frame}
 
+\end{document}
+
 \begin{frame}
 \frametitle{Appendix}
 \framesubtitle{Using the ReM}
@@ -957,4 +1224,6 @@ pos= "PTKNEG" \&\\
 \end{center}
     
 \end{frame}
+
+
 \end{document}
